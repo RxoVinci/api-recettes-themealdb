@@ -1,10 +1,13 @@
 import express from 'express'
+import recettesRoutes from './routes/recettes.routes.js'
 
 const app = express()
 
 app.get('/health', (req, res) => {
     res.json({ version: '1.0.0' })
 })
+
+app.use('/api/recettes', recettesRoutes)
 
 // route qui n'existe pas
 app.use((req, res) => {
