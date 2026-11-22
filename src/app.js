@@ -1,5 +1,6 @@
 import express from 'express'
 import recettesRoutes from './routes/recettes.routes.js'
+import statsRoutes from './routes/stats.routes.js'
 
 const app = express()
 
@@ -8,6 +9,7 @@ app.get('/health', (req, res) => {
 })
 
 app.use('/api/recettes', recettesRoutes)
+app.use('/api/stats', statsRoutes)
 
 // route qui n'existe pas
 app.use((req, res) => {
